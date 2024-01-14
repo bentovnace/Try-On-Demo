@@ -1,0 +1,104 @@
+<CameraScreen>
+    ScreenManager:
+        id:main
+
+        Screen: 
+            name:'scr_1'
+            id: scr_1
+            FitImage:
+                source:'Background for App.png'
+            MDBoxLayout:
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                size_hint_x: .40
+		        size_hint_y: .31
+                
+                MDCard:
+                    radius: 20
+		            orientation: 'vertical'
+		            y:'20dp'
+                    elevation:10
+                    ripple_behavior: True
+                    on_release: root.build_camera()
+                    
+                    Image:
+                        source:'capture_pic.jpg'
+                        size_hint_x: 2
+                        size_hint_y: 1.9
+                        pos_hint: {'center_x': 0.5,'center_y': 0.4}
+                    MDLabel:
+                        text:'Capture'
+                        halign: 'center'
+                        font_name:'Jaime Blues.ttf'
+                        font_size:'32dp'
+    
+
+        Screen:
+            name: 'scr_2'
+            
+            id: scr_2
+            FitImage:
+                source:'Background for App.png'
+            Image:
+                id:img_camera
+
+
+            Button:
+                id: stateloader                   
+                ripple_behavior: True
+                background_color: 0,0,0,0
+                size_hint:.2,.2
+                pos: 180,30
+                on_press: root.Capture_image()
+                
+                Image:
+                    id: rec_image
+                    source:'icons8-record-100.png'
+                    #pos: 300,140
+                    
+                    #size: 120,120
+                    pos: 180,30                    
+                    size: 120,120
+            MDLabel:
+                id:counter
+                text:""
+                halign:"center"
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                
+                font_size: "72sp"
+               
+                
+                color: "#D60000"
+        Screen:
+            name:"disconnect_network"
+            id: disconnect_network
+            FitImage:
+                source:"Disconnect.png"
+            MDRectangleFlatButton:
+                halign: 'center'
+                text: 'Reload'
+                pos_hint:{'center_x':.5,'center_y':.1}
+                on_release: root.reload_check() 
+              
+        Screen:
+            name:'Clothes_change'
+            id:clothes_change
+            FitImage:
+                source:'Background for App.png'
+
+            Button:
+                size_hint:.2,.1
+                background_color: 0,0,0,0                
+                on_release: root.back()
+                pos: 20,590
+                size: 80,80  
+                Image:
+                    
+                    source:'icons8-back-arrow-65.png'
+                    pos: 20,590
+                    size: 80,80 
+            MDBoxLayout:
+                Image:
+                    id:capture_img
+                    source:"test_img.png"
+
+            

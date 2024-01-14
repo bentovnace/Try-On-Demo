@@ -1,0 +1,48 @@
+<RootScreen>
+
+    ScreenManager:
+        id: main_scr
+        Screen:
+            id: root_screen
+            name:'root_screen_pro'
+            MDBoxLayout:
+                orientation: 'vertical'
+        
+                
+                MDBottomNavigation:       
+                    id: main                
+                    
+                    MDBottomNavigationItem:
+
+                        name:"CameraScreen"
+                        icon:'camera'                              
+                             
+                        text:'Camera'
+                        on_leave: app.on_leave()       
+                        
+                        
+                        CameraScreen:
+                            name: main
+                        
+                        
+                    MDBottomNavigationItem:
+
+                        
+
+                        name:"ChooseClothesScreen" 
+                        icon:'account'
+                        text:'Clothes'
+                        
+                        on_leave: app.on_leave()
+
+
+                        
+
+                        ChooseClothesScreen:
+                            name: main
+
+                                
+
+                                
+
+                  
